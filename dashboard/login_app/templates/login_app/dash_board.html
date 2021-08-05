@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<h1>Welcome To Your Dashboard.</h1><br>
+
+ Hello {{ user_data.username }},<br>
+
+
+<br>
+<table border="3">
+    <tr>
+        <th>Username</th>
+        <th>User Email</th>
+        <th>User Address</th>
+        <th>User Mobile_No</th>
+    </tr>
+
+    <tr>
+        <td>{{ user_data.username }}</td>
+        <td>{{ user_data.user_email }}</td>
+        <td>{{ user_data.Address }}</td>
+        <td>{{ user_data.mobile_no }}</td>
+    </tr>
+</table>
+<br>
+<a href="{% url 'logout' %}">Logout</a>
+
+{% endblock %}
+
+
